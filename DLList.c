@@ -162,15 +162,11 @@ printList();
 #ifdef mainapp 
 while (1){
 
-    printf("Add (a) or remove (r) node.  Or (e) to exit\n");
-    scanf(" %c", &input);
+    printf("Enter (a)dd or (r)emove node then the value.\n");
+    scanf(" %c %d", &input, &node);
 
-    if (input == 'e'){
-        return(1);
-    }
-
-    printf("Value of node\n");
-    scanf(" %d", &node);
+    // printf("Value of node\n");
+    // scanf(" %d", &node);
 
     if (input == 'a'){
         insertNode(node);
@@ -179,6 +175,14 @@ while (1){
         removeNode(node);
         printList();
     }
+
+    printf("Enter (c) to continue, or any other key to exit...\n");
+    scanf(" %c", &input);
+
+    if (input != 'c'){
+        return(1);
+    }
+
 }
 #endif
 

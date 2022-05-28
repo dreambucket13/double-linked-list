@@ -148,10 +148,7 @@ int main (int argc, char* argv[]){
 int node;
 char input;
 
-#define mainapp 
-//#define debug
-
-#ifdef debug
+#ifdef DEBUG
 insertNode(-1);
 insertNode(5);
 insertNode(10);
@@ -159,7 +156,7 @@ insertNode(7);
 printList();
 #endif
 
-#ifdef mainapp 
+
 while (1){
 
     printf("Enter (a)dd or (r)emove node then the value.\n");
@@ -184,7 +181,7 @@ while (1){
     }
 
 }
-#endif
+
 
 return(0);
 }

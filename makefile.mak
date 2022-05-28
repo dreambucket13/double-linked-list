@@ -8,14 +8,25 @@ CFLAGS  = -Wall -g
 
   # the build target executable:
 TARGET = DLList
-
-all: $(TARGET)
+DEBUG = -debug
+DIR := ${CURDIR}
 
 #syntax is, in order to this: I need these up to date
 #command is on next line with a tab (not 5 spaces!!)
+
+all: $(TARGET)
+
 $(TARGET): $(TARGET).c 
 	$(CC) -o $(TARGET) $(TARGET).c $(CFLAGS)
+
+debug: $(TARGET)-debug
+
+$(TARGET)-debug: $(TARGET).c 
+	$(CC) -o $(TARGET)-debug $(TARGET).c $(CFLAGS) -DDEBUG
+
+
 #windows clean
 clean:
-	-del -fR $(TARGET).exe
+	rm $(DIR)/*.exe
+
 
